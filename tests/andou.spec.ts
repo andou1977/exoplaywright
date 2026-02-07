@@ -14,7 +14,7 @@ test('verifier login', async ({page})=>{
 
 
 test('tableau html',async ({page}) =>{
- await page.goto('C:\\Users\\GENIUS\\IdeaProjects\\firstplaywright\\ressources\\image\\index.html')
+    await page.goto('file:///C:/Users/GENIUS/IdeaProjects/firstplaywright/ressources/image/index.html');
 
  await expect(page.locator('table')).toContainText('$179.99')
     console.log(await page.locator('.compare-btn').count());
