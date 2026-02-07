@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Comparison Table</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .table-container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f1f1f1;
+        }
+
+        /* Highlighting selected product row */
+        tr.selected {
+            background-color: #ffd54f;
+            font-weight: bold;
+        }
+
+        /* Hover effect for rows */
+        tr:hover {
+            background-color: #ddd;
+            transform: scale(1.02);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Pricing column */
+        .price {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Features section */
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .feature-list li {
+            margin: 5px 0;
+        }
+
+        /* Compare button */
+        .compare-btn {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .compare-btn:hover {
+            background-color: #0b7dda;
+        }
+
+        /* Styling the table borders */
+        td, th {
+            border-left: 1px solid #ddd;
+        }
+
+        td:last-child, th:last-child {
+            border-right: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h1>Product Comparison</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Product 1</th>
+                    <th>Product 2</th>
+                    <th>Product 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Price</td>
+                    <td class="price">$199.99</td>
+                    <td class="price">$249.99</td>
+                    <td class="price">$179.99</td>
+                </tr>
+                <tr>
+                    <td>Display Size</td>
+                    <td>6.1 inches</td>
+                    <td>6.7 inches</td>
+                    <td>5.8 inches</td>
+                </tr>
+                <tr>
+                    <td>Battery Life</td>
+                    <td>12 hours</td>
+                    <td>15 hours</td>
+                    <td>10 hours</td>
+                </tr>
+                <tr>
+                    <td>Camera</td>
+                    <td>12 MP</td>
+                    <td>48 MP</td>
+                    <td>12 MP</td>
+                </tr>
+                <tr>
+                    <td>Storage</td>
+                    <td>64 GB</td>
+                    <td>128 GB</td>
+                    <td>64 GB</td>
+                </tr>
+                <tr>
+                    <td>Features</td>
+                    <td><ul class="feature-list">
+                            <li>Fast Charging</li>
+                            <li>Water Resistant</li>
+                            <li>5G Enabled</li>
+                        </ul></td>
+                    <td><ul class="feature-list">
+                            <li>Fast Charging</li>
+                            <li>Water Resistant</li>
+                            <li>4G LTE</li>
+                        </ul></td>
+                    <td><ul class="feature-list">
+                            <li>Fast Charging</li>
+                            <li>Water Resistant</li>
+                            <li>5G Enabled</li>
+                        </ul></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="compare-btn">Compare</button></td>
+                    <td><button class="compare-btn">Compare</button></td>
+                    <td><button class="compare-btn">Compare</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Adding selection behavior for rows
+        document.querySelectorAll("tr").forEach(function(row) {
+            row.addEventListener("click", function() {
+                document.querySelectorAll("tr").forEach(function(innerRow) {
+                    innerRow.classList.remove("selected");
+                });
+                row.classList.add("selected");
+            });
+        });
+    </script>
+</body>
+</html>
